@@ -66,7 +66,7 @@ func UploadToS3(file io.Reader, folder string, filename string) (string, error) 
 
 	// Subir el archivo a S3
 	_, err = s3Client.PutObject(context.TODO(), &s3.PutObjectInput{
-		Bucket:      aws.String("v1-casas-charlotte"),
+		Bucket:      aws.String("v1-bucket-casas-sebastian-nadal"),
 		Key:         aws.String(key),
 		Body:        bytes.NewReader(buf.Bytes()),
 		ContentType: aws.String(contentType),
@@ -77,6 +77,6 @@ func UploadToS3(file io.Reader, folder string, filename string) (string, error) 
 	}
 
 	// Construir la URL del archivo subido
-	url := fmt.Sprintf("https://%s.s3.%s.amazonaws.com/%s", "v1-casas-charlotte", os.Getenv("AWS_REGION"), key)
+	url := fmt.Sprintf("https://%s.s3.%s.amazonaws.com/%s", "v1-bucket-casas-sebastian-nadal", os.Getenv("AWS_REGION"), key)
 	return url, nil
 }
