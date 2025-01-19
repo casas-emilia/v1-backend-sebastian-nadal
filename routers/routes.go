@@ -17,6 +17,7 @@ func SetupRouter() *gin.Engine {
 		AllowOrigins: []string{
 			"http://localhost:5173",
 			"http://192.168.0.11:3000",
+			"https://worldtimeapi.org/api/ip",
 			"https://v1-backend-sebastian-nadal-production.up.railway.app",
 			"https://v1-frontend-sebastian-nadal-production.up.railway.app",
 		}, // Dominios permitidos
